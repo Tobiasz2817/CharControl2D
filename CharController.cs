@@ -39,11 +39,19 @@ namespace CharControl2D {
         public bool IsDashReset { protected set; get; }
         public bool IsDashReady { protected set; get; }
         public bool IsJumpCut { protected set; get; }
-        public bool IsJumping => _rb2D.velocity.y > 0;     
         public bool IsDashing { protected set; get; }
         public bool IsCrouch { private set; get; }
-        public bool IsFalling => _rb2D.velocity.y < 0f && !_col2D.IsGrounded;
-        public bool IsStanding => Mathf.Approximately(_rb2D.velocity.y, 0.05f);
+ 
+        
+#if UNITY_6000
+            public bool IsFalling => _rb2D.linearVelocity.y < 0f && !_col2D.IsGrounded;
+            public bool IsStanding => Mathf.Approximately(_rb2D.linearVelocity.y, 0.05f);
+            public bool IsJumping => _rb2D.linearVelocity.y > 0;     
+#else 
+            public bool IsFalling => _rb2D.velocity.y < 0f && !_col2D.IsGrounded;
+            public bool IsStanding => Mathf.Approximately(_rb2D.velocity.y, 0.05f);
+            public bool IsJumping => _rb2D.velocity.y > 0;     
+#endif
 
         #endregion
 
@@ -84,7 +92,11 @@ namespace CharControl2D {
             // Set the gravity when is not the same
             _rb2D.SetGravityScale(GetGravity());
             // Not falling when gravity is equal 0
+#if UNITY_6000
+            _rb2D.SetVelocity(y: Mathf.Max(_rb2D.linearVelocity.y, -Data.GravityMaxFall), condition: _rb2D.gravityScale != 0);
+#else 
             _rb2D.SetVelocity(y: Mathf.Max(_rb2D.velocity.y, -Data.GravityMaxFall), condition: _rb2D.gravityScale != 0);
+#endif
         }
         
         void FixedUpdate() {
@@ -208,7 +220,12 @@ namespace CharControl2D {
                 return Data.GravityJumpCutFall;
             
             // Fall condition
-            if (!_col2D.IsGrounded && _rb2D.velocity.y <= Data.VelocityFallThreshold && !_rb2D.IsGravityEqual(Data.GravityJumpCutFall)) 
+#if UNITY_6000
+            var velocityY = _rb2D.linearVelocity.y;
+#else 
+            var velocityY = _rb2D.velocity.y;
+#endif
+            if (!_col2D.IsGrounded && velocityY <= Data.VelocityFallThreshold && !_rb2D.IsGravityEqual(Data.GravityJumpCutFall)) 
                 return Data.GravityJumpFall;
             
             // Flying/default condition
@@ -244,7 +261,11 @@ namespace CharControl2D {
                 onComplete: () => { _jumpProgressTime = 0f; },
                 condition: () => IsJumpCut);
             
+#if UNITY_6000
+            _rb2D.linearVelocity = _rb2D.linearVelocity.With(y: 0f);
+#else 
             _rb2D.velocity = _rb2D.velocity.With(y: 0f);
+#endif
             _rb2D.AddForce(Data.JumpForce * Vector2.up, ForceMode2D.Impulse);
 #if SIGNALS
             BusSignals.CharacterJump(_currentJumpCount);
@@ -269,13 +290,19 @@ namespace CharControl2D {
         }
         
         void Move() {
+#if UNITY_6000
+            var velocityX = _rb2D.linearVelocity.x;
+#else 
+            var velocityX = _rb2D.velocity.x;
+#endif
+            
             var targetSpeed = _input.Direction.x * Data.MoveMaxSpeed;
-            targetSpeed = Mathf.Lerp(_rb2D.velocity.x, targetSpeed, IsStanding && IsCrouch ? 0.5f : 1f);
+            targetSpeed = Mathf.Lerp(velocityX, targetSpeed, IsStanding && IsCrouch ? 0.5f : 1f);
 
             var accelRate = Mathf.Abs(targetSpeed) > 0.01f ? Data.MoveAccel : Data.MoveDecel;
             accelRate *= IsFalling || IsJumping ? Mathf.Abs(targetSpeed) > 0.01f ? Data.MoveAirAcceleration : Data.MoveAirDeceleration : 1f;
             
-            var speedDif = targetSpeed - _rb2D.velocity.x;
+            var speedDif = targetSpeed - velocityX;
             var moveSpeed = speedDif * accelRate;
             
             _rb2D.AddForce(moveSpeed * Vector2.right, ForceMode2D.Force);
@@ -301,8 +328,12 @@ namespace CharControl2D {
                 Mathf.Clamp01(Data.DashCurve.Evaluate(progress / Data.DashDuration)) * Data.DashSpeed * transform.localScale.x,
                 -Data.DashSpeed, 
                 Data.DashSpeed);
-                
+            
+#if UNITY_6000
+            _rb2D.linearVelocity = new Vector2(velocity, 0);
+#else 
             _rb2D.velocity = new Vector2(velocity, 0);
+#endif
         }
 
         IEnumerator DashCooldown() {
@@ -325,7 +356,11 @@ namespace CharControl2D {
             IsDashing = true;
             IsDashReset = false;
             CanMove = false;
+#if UNITY_6000
+            _rb2D.linearVelocity = _rb2D.linearVelocity.With(y: 0f);
+#else 
             _rb2D.velocity = _rb2D.velocity.With(y: 0f);
+#endif
         }
 
         void StopDash() {
