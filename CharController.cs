@@ -1,10 +1,13 @@
-using System;
+using UnityEngine.InputSystem;
+using CoreUtility.Extensions;
 using System.Collections;
 using CoreUtility;
-using CoreUtility.Extensions;
-using Signals;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using System;
+
+#if SIGNALS
+using Signals;
+#endif
 
 namespace CharControl2D {
     [DefaultExecutionOrder(-500)]
@@ -243,7 +246,9 @@ namespace CharControl2D {
             
             _rb2D.velocity = _rb2D.velocity.With(y: 0f);
             _rb2D.AddForce(Data.JumpForce * Vector2.up, ForceMode2D.Impulse);
+#if SIGNALS
             BusSignals.CharacterJump(_currentJumpCount);
+#endif
         }
 
         bool CutJumpCondition => _jumpProgressTime >= Data.MinJumpCutPercent &&
