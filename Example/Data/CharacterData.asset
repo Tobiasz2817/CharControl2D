@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4503bde9994faba3caa11eda83fad1, type: 3}
+  m_Name: CharacterData
+  m_EditorClassIdentifier: 
+  <GravityMaxFall>k__BackingField: 30
+  <MoveAcceleration>k__BackingField: 11
+  <MoveDeceleration>k__BackingField: 11
+  <MoveMaxSpeed>k__BackingField: 11
+  <MoveAirAcceleration>k__BackingField: 0.4
+  <MoveAirDeceleration>k__BackingField: 0.4
+  <JumpCount>k__BackingField: 2
+  <JumpHeight>k__BackingField: 3
+  <JumpTimeToApex>k__BackingField: 0.3
+  <JumpFall>k__BackingField: 1
+  <JumpCutFall>k__BackingField: 1.25
+  <MinJumpCutPercent>k__BackingField: 0
+  <MaxJumpCutPercent>k__BackingField: 0.8
+  <JumpCoyoteTime>k__BackingField: 0.05
+  <JumpInputBuffer>k__BackingField: 0.2
+  <VelocityFallThreshold>k__BackingField: 0.5
+  <DashCooldown>k__BackingField: 0.2
+  <DashSpeed>k__BackingField: 20
+  <DashDuration>k__BackingField: 0.2
+  <GravityDashFall>k__BackingField: 0
+  <DashCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <WallFall>k__BackingField: 1
