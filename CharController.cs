@@ -148,7 +148,6 @@ namespace CharControl2D {
         
         void CollisionEntry(RaycastHit2D raycastHit, bool isGrounded, bool isCelling, int wallDir) {
             if (isGrounded || wallDir != 0) {
-                Debug.Log("ON COLLISION: " + (wallDir != 0));
                 IsJumpCut = false;  
                 _currentJumpCount = _col2D.IsGrounded ? 0 : 1;
                 _jumpCoyoteTime = Data.JumpCoyoteTime;

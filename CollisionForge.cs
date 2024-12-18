@@ -63,7 +63,7 @@ namespace CharControl2D {
                 OnCollisionStay?.Invoke(hit, contacts.Item1, contacts.Item3, contacts.Item2);
                 if (IsGrounded && !prevState.IsGrounded || 
                     IsCelling && !prevState.IsCelling || 
-                    WallDir != 0 && prevState.WallDir == 0) 
+                    WallDir != 0 && prevState.WallDir == 0)
                     
                     OnCollisionEntry?.Invoke(hit, contacts.Item1, contacts.Item3, contacts.Item2);
             }
