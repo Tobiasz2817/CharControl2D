@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4503bde9994faba3caa11eda83fad1, type: 3}
+  m_Script: {fileID: 11500000, guid: a75ae0077832bf843837295c36b1d19b, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: 
   <GravityMaxFall>k__BackingField: 30
@@ -31,6 +31,7 @@ MonoBehaviour:
   <DashCooldown>k__BackingField: 0.2
   <DashSpeed>k__BackingField: 20
   <DashDuration>k__BackingField: 0.2
+  <DashInputBuffer>k__BackingField: 0.1
   <GravityDashFall>k__BackingField: 0
   <DashCurve>k__BackingField:
     serializedVersion: 2
@@ -40,7 +41,7 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -49,7 +50,7 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
