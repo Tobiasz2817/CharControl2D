@@ -1,1 +1,13 @@
-{"name":"CharControl2D","references":["GUID:75469ad4d38634e559750d17036d5f7c","GUID:c334b22065f9cdc449066c3695fc187d","GUID:e8168c3bcc3303343b38257948a317ac"],"optionalUnityReferences":[],"versionDefines":[],"allowUnsafeCode":false}
+{
+    "name": "CharControl2D",
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:c334b22065f9cdc449066c3695fc187d",
+        "GUID:e8168c3bcc3303343b38257948a317ac",
+        "GUID:68da9576cc9c2664a992145038f473bf",
+        "GUID:07c2f6d10c9213843ad69e3867f84045"
+    ],
+    "optionalUnityReferences": [],
+    "versionDefines": [],
+    "allowUnsafeCode": false
+}
