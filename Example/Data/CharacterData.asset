@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75ae0077832bf843837295c36b1d19b, type: 3}
+  m_Script: {fileID: 11500000, guid: aba9c232bec269e48936dc7df6b2a0ed, type: 3}
   m_Name: CharacterData
   m_EditorClassIdentifier: 
   <GravityMaxFall>k__BackingField: 30
@@ -27,7 +27,7 @@ MonoBehaviour:
   <MaxJumpCutPercent>k__BackingField: 0.8
   <JumpCoyoteTime>k__BackingField: 0.05
   <JumpInputBuffer>k__BackingField: 0.2
-  <VelocityFallThreshold>k__BackingField: 0
+  <VelocityFallThreshold>k__BackingField: 0.5
   <DashCooldown>k__BackingField: 0.2
   <DashSpeed>k__BackingField: 20
   <DashDuration>k__BackingField: 0.2

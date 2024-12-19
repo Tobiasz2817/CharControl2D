@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 44713490236660085}
   - component: {fileID: 2470305062389792391}
   - component: {fileID: 3772661346533020053}
+  - component: {fileID: 3985153558602924337}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -190,3 +191,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.52318954}
   m_EdgeRadius: 0
+--- !u!114 &3985153558602924337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663361024683070655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26ec257dd36bdd4aa95c2f39126b9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _collisionThreshold: 0.1
+  Data: {fileID: 11400000, guid: de34857ef96ebcb40b47d1930b4f63f1, type: 2}
+  InputAsset: {fileID: -944628639613478452, guid: 60cf5cdea3ec896429ee21890fbdf554, type: 3}
+  InputSheet:
+    MapInputSheet: Player
+    MoveInputSheet: Move
+    JumpInputSheet: Jump
+    DashInputSheet: Dash
+  InputDevice: 3
