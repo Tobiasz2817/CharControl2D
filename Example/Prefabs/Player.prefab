@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 44713490236660085}
   - component: {fileID: 2470305062389792391}
   - component: {fileID: 3772661346533020053}
-  - component: {fileID: 5569740888948138117}
+  - component: {fileID: 8539154310129920682}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -191,7 +191,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5283885, y: 0.5437944}
   m_EdgeRadius: 0
---- !u!114 &5569740888948138117
+--- !u!114 &8539154310129920682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6663361024683070655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8fbd36f32d5584c9e8aab4503126a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dbe63839186900428b277750a6d9aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collisionMask:
@@ -208,7 +208,7 @@ MonoBehaviour:
     m_Bits: 128
   _collisionThreshold: 0.1
   Data: {fileID: 11400000, guid: de34857ef96ebcb40b47d1930b4f63f1, type: 2}
-  InputAsset: {fileID: -944628639613478452, guid: a1b345dd2ba83d54793450a426ec6ab9, type: 3}
+  InputAsset: {fileID: -944628639613478452, guid: 4d397a5e3ec55734fb4c1777bf94fd08, type: 3}
   InputSheet:
     MapInputSheet: Player
     MoveInputSheet: Move
