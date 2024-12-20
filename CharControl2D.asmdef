@@ -1,0 +1,18 @@
+{
+    "name": "CharControl2D",
+    "rootNamespace": "",
+    "references": [
+        "GUID:68da9576cc9c2664a992145038f473bf",
+        "GUID:8a870a0f63de2bd47b7089b36f208a77",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
