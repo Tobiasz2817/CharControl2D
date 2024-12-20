@@ -821,26 +821,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3772661346533020053, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5283885
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772661346533020053, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5437944
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772661346533020053, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0035514832
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772661346533020053, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.00000011920929
-      objectReference: {fileID: 0}
-    - target: {fileID: 3772661346533020053, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 6663361024683070655, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
       propertyPath: m_Name
       value: Player
@@ -848,40 +828,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6663361024683070655, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 728044697}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
---- !u!1 &728044694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6663361024683070655, guid: 259a923db49597b4ba83fe6855d83399, type: 3}
-  m_PrefabInstance: {fileID: 728044693}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &728044697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728044694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8fbd36f32d5584c9e8aab4503126a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collisionMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _collisionThreshold: 0.1
-  Data: {fileID: 11400000, guid: de34857ef96ebcb40b47d1930b4f63f1, type: 2}
-  InputAsset: {fileID: -944628639613478452, guid: a1b345dd2ba83d54793450a426ec6ab9, type: 3}
-  InputSheet:
-    MapInputSheet: Player
-    MoveInputSheet: Move
-    JumpInputSheet: Jump
-    DashInputSheet: Dash
-  InputDevice: 3
 --- !u!1 &840644851
 GameObject:
   m_ObjectHideFlags: 0
